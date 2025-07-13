@@ -1,13 +1,17 @@
 package com.profile.searcher.service.client;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.profile.searcher.model.phantom.buster.LinkedInProfileScrapResponse;
+import com.profile.searcher.model.phantom.buster.PhantomLaunchResponse;
+import com.profile.searcher.model.phantom.buster.PhantomPayload;
 import com.profile.searcher.model.properties.PhantomBusterProperties;
-import com.profile.searcher.model.request.phantom.buster.PhantomLaunchResponse;
-import com.profile.searcher.model.request.phantom.buster.PhantomPayload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -19,10 +23,13 @@ public class PhantomBusterClient {
 
     private static final String PHANTOM_URL = "https://api.phantombuster.com/api/v2/agents/launch";
     private static final String LINKEDIN_SEARCH_URL = "https://www.linkedin.com/search/results/people/";
+    private static final String PHANTOM_CONTAINER_OUTPUT_URL = "https://api.phantombuster.com/api/v2/containers/fetch";
 
     private final RestTemplate restTemplate;
 
     private final PhantomBusterProperties properties;
+
+    private final ObjectMapper objectMapper;
 
 
     public PhantomLaunchResponse triggerPhantomBusterSearch(String currentDesignation, String university) {
@@ -36,6 +43,18 @@ public class PhantomBusterClient {
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+    public LinkedInProfileScrapResponse getContainerOutput(String containerId) {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(PHANTOM_CONTAINER_OUTPUT_URL)
+                .queryParam("id", containerId)
+                .queryParam("withResultObject", "true");
+        HttpHeaders headers = creatHttpHeaders();
+        HttpEntity httpEntity = new HttpEntity(headers);
+        ResponseEntity<LinkedInProfileScrapResponse> response = restTemplate.exchange(builder.toUriString(), HttpMethod.GET, httpEntity,
+                LinkedInProfileScrapResponse.class);
+        return objectMapper.convertValue(response.getBody(),
+                LinkedInProfileScrapResponse.class);
     }
 
     private PhantomPayload createPhantomBusterPayload(String currentDesignation, String university) {

@@ -30,12 +30,14 @@ dependencies {
     implementation("org.postgresql:postgresql")
 
     //mapstruct
-    implementation("org.mapstruct:mapstruct:1.5.2.Final")
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.2.Final")
+    implementation("org.mapstruct:mapstruct:1.6.3")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 
     //lombok
     implementation("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+
 
     implementation("com.fasterxml.jackson.core:jackson-databind")
 
@@ -49,7 +51,7 @@ dependencies {
     testImplementation("com.h2database:h2")
 
     //test
-    testAnnotationProcessor("org.mapstruct:mapstruct-processor")
+    testAnnotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

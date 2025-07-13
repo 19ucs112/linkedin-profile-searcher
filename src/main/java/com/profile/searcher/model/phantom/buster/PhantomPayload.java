@@ -1,4 +1,4 @@
-package com.profile.searcher.model.request.phantom.buster;
+package com.profile.searcher.model.phantom.buster;
 
 import lombok.Getter;
 import lombok.Setter;
