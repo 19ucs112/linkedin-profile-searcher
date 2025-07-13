@@ -1,0 +1,24 @@
+package com.profile.searcher.model.request.phantom.buster;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class PhantomPayload {
+    private String id;
+    private String output = "first-result-object";
+    private PhantomBusterInput argument;
+
+    @Getter
+    @Setter
+    public static class PhantomBusterInput {
+        private String search;
+        private String keywords;
+        private String sessionCookie;
+        private int numberOfResultsPerLaunch = 10;
+        private int numberOfResultsPerSearch = 10;
+        private String searchType = "keywords";
+    }
+}
+
