@@ -1,13 +1,14 @@
 spring:
   application:
-    name: dataset-service
+    name: linkedin-profile-searcher
   datasource:
-    url: jdbc:h2:mem:dataset-svc;MODE=MYSQL
+    url: jdbc:h2:mem:linked-in-profile-searcher-svc;MODE=MYSQL
     username: sa
     password:
     driver-class-name: org.h2.Driver
   flyway:
     locations: classpath:test/db/migration
+    enabled: true
 
 com:
   phantom:
