@@ -7,10 +7,10 @@ spring:
     driver-class-name: org.h2.Driver
     password:
   flyway:
-    locations: classpath:test/db/migration
-    enabled: true
-    user: sa
-    password:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 com:
   phantom:

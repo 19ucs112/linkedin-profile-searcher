@@ -8,6 +8,7 @@ import com.profile.searcher.repository.PhantomAgentTaskRepository;
 import com.profile.searcher.repository.UniversityRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -85,6 +86,7 @@ public class AbstractTest {
     }
 
     @TestConfiguration
+    @EntityScan(basePackages = {"com.profile.searcher.entity"})
     public static class TestConfig {
 
     }
