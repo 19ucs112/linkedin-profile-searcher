@@ -1,17 +1,16 @@
-name: Coverage, Badge & Deploy Javadoc
+name: Coverage & Badge
 
 on:
   pull_request:
   push:
     branches:
       - master
-      - main
 
 jobs:
-  build:
+  coverage:
     runs-on: ubuntu-latest
     permissions:
-      contents: write        # for pushing to badges and javadoc branch
+      contents: write        # for pushing to badges branch
       pull-requests: write   # for commenting coverage on PR
 
     steps:
@@ -30,7 +29,7 @@ jobs:
       - name: Run Tests and Generate Coverage
         run: |
           chmod +x ./gradlew
-          ./gradlew test jacocoTestReport javadoc
+          ./gradlew test jacocoTestReport
 
       - name: Report Coverage on PR
         if: github.event_name == 'pull_request'
@@ -78,29 +77,24 @@ jobs:
             </g>
           </svg>" > coverage.svg
 
-      - name: Upload coverage badge to `badges` branch
+      - name: Upload badge to `badges` branch
         if: github.ref == 'refs/heads/master'
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
+          # Clean worktree directory
           rm -rf badges_branch
+
+          # Create a new worktree for the badges branch
           git fetch origin badges || git branch badges
           git worktree add badges_branch badges
 
+          # Move SVG into the worktree and commit it
           mv coverage.svg badges_branch/coverage.svg
           cd badges_branch
 
           git add coverage.svg
           git commit -m "Update coverage badge [skip ci]" || echo "No changes to commit"
           git push origin HEAD:badges
-
-      - name: Deploy JavaDoc 🚀
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
-        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          java-version: 17
-          target-folder: javadoc
-          project: gradle
+      
