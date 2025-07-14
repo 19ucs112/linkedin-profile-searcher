@@ -36,7 +36,7 @@ public class PhantomAgentTaskEntity {
     private String currentDesignation;
 
     @Column(name = "passed_out_year")
-    private int passedOutYear;
+    private Integer passedOutYear;
 
     @Column(name = "task_status")
     @Enumerated(EnumType.STRING)

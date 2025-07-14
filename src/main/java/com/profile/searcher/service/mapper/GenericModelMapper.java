@@ -2,6 +2,7 @@ package com.profile.searcher.service.mapper;
 
 import com.profile.searcher.entity.AlumniEntity;
 import com.profile.searcher.entity.PhantomAgentTaskEntity;
+import com.profile.searcher.entity.UniversityEntity;
 import com.profile.searcher.model.enums.PhantomAgentTaskStatus;
 import com.profile.searcher.model.phantom.buster.LinkedInProfileExportAgentResponse;
 import com.profile.searcher.model.request.LinkedInProfileSearchDTO;
@@ -21,15 +22,16 @@ public interface GenericModelMapper {
 
     @Mapping(target = "containerId", source = "containerId")
     @Mapping(target = "university", source = "dto.university")
-    @Mapping(target = "currentDesignation", source = "dto.currentDesignation")
+    @Mapping(target = "currentDesignation", expression = "java(dto.getCurrentDesignation().toLowerCase())")
     @Mapping(target = "passedOutYear", source = "dto.graduationYear")
     @Mapping(target = "phantomAgentTaskStatus", expression = "java(PhantomAgentTaskStatus.AGENT_LAUNCHED)")
     PhantomAgentTaskEntity map(String containerId, LinkedInProfileSearchDTO dto);
 
-    @Mapping(target = "title", source = "agentResponse.jobTitle")
+    @Mapping(target = "title", expression = "java(agentResponse.getJobTitle().toLowerCase())")
     @Mapping(target = "profileHeadLine", source = "agentResponse.additionalInfo")
-    @Mapping(target = "passedOutYear", expression = "java(getPassedOutDate(agentResponse, universityName))")
-    AlumniEntity map(LinkedInProfileExportAgentResponse agentResponse, String universityName);
+    @Mapping(target = "university", source = "university")
+    @Mapping(target = "passedOutYear", expression = "java(getPassedOutDate(agentResponse, university.getName()))")
+    AlumniEntity map(LinkedInProfileExportAgentResponse agentResponse, UniversityEntity university);
 
     default Integer getPassedOutDate(LinkedInProfileExportAgentResponse response, String university) {
         if (university.equalsIgnoreCase(response.getSchool()) && StringUtils.hasText(response.getSchoolDateRange())) {

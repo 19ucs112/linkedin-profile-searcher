@@ -38,6 +38,8 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 
+    //pojotester
+    testImplementation("com.obsidiandynamics.pojotester:core:0.9.0")
 
     implementation("com.fasterxml.jackson.core:jackson-databind")
 

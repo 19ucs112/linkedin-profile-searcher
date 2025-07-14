@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dataset-service
+  datasource:
+    url: jdbc:h2:mem:dataset-svc;MODE=MYSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  flyway:
+    locations: classpath:test/db/migration
+
+com:
+  phantom:
+    buster:
+      phantom-id: 814818359720730
+      phantom-buster-api-key: GXDWqkWxhbHATLTWjNbnyaNwhmEfEjaidJmCQHD8zDk
+      linked-in-session-cookie: AQEDATB5kfwE0dg0AAABmAOn488AAAGYJ7Rnz1YAqQAFtlc5_BcpfNLzTNQbLm15lqyAZZ0uTSMlNXBFT4KwFuMBYvzID8BMlnt3M-e7YVowf9KZax0sv019N_W0Du6MdxNojVCvkad-2xnwMiGs9fQj

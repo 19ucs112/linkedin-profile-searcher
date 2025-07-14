@@ -7,6 +7,7 @@ import com.profile.searcher.service.PhantomAgentTaskService;
 import com.profile.searcher.service.mapper.GenericModelMapper;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -20,5 +21,10 @@ public class PhantomAgentTaskServiceImpl implements PhantomAgentTaskService {
     public UUID createPhantomBulkConsentTask(String containerId, LinkedInProfileSearchDTO linkedInProfileSearchDTO) {
         PhantomAgentTaskEntity entity = modelMapper.map(containerId, linkedInProfileSearchDTO);
         return taskRepository.save(entity).getId();
+    }
+
+    @Override
+    public Optional<PhantomAgentTaskEntity> findPhantomAgentTaskByTrackingId(UUID trackingId) {
+        return taskRepository.findById(trackingId);
     }
 }

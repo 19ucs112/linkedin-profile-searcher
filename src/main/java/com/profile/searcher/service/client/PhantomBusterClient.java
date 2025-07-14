@@ -1,6 +1,7 @@
 package com.profile.searcher.service.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.profile.searcher.model.exceptions.LinkedInProfileSearcherException;
 import com.profile.searcher.model.phantom.buster.LinkedInProfileScrapResponse;
 import com.profile.searcher.model.phantom.buster.PhantomLaunchResponse;
 import com.profile.searcher.model.phantom.buster.PhantomPayload;
@@ -37,11 +38,10 @@ public class PhantomBusterClient {
         HttpHeaders headers = creatHttpHeaders();
         HttpEntity<PhantomPayload> httpEntity = new HttpEntity<>(payload, headers);
         try {
-            PhantomLaunchResponse response = restTemplate.postForObject(PHANTOM_URL, httpEntity,
+            return restTemplate.postForObject(PHANTOM_URL, httpEntity,
                     PhantomLaunchResponse.class);
-            return response;
         } catch (Exception ex) {
-            throw new RuntimeException(ex);
+            throw new LinkedInProfileSearcherException(ex.getMessage());
         }
     }
 
@@ -51,10 +51,14 @@ public class PhantomBusterClient {
                 .queryParam("withResultObject", "true");
         HttpHeaders headers = creatHttpHeaders();
         HttpEntity httpEntity = new HttpEntity(headers);
-        ResponseEntity<LinkedInProfileScrapResponse> response = restTemplate.exchange(builder.toUriString(), HttpMethod.GET, httpEntity,
-                LinkedInProfileScrapResponse.class);
-        return objectMapper.convertValue(response.getBody(),
-                LinkedInProfileScrapResponse.class);
+        try {
+            ResponseEntity<LinkedInProfileScrapResponse> response = restTemplate.exchange(builder.toUriString(), HttpMethod.GET, httpEntity,
+                    LinkedInProfileScrapResponse.class);
+            return objectMapper.convertValue(response.getBody(),
+                    LinkedInProfileScrapResponse.class);
+        } catch (Exception ex) {
+            throw new LinkedInProfileSearcherException(ex.getMessage());
+        }
     }
 
     private PhantomPayload createPhantomBusterPayload(String currentDesignation, String university) {

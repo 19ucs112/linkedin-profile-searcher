@@ -7,5 +7,5 @@ import java.util.UUID;
 
 public interface PhantomBusterService {
 
-    SuccessResponseVO<UUID> searchLinkedInProfiles(LinkedInProfileSearchDTO linkedInProfileSearchDTO);
+    SuccessResponseVO<Object> searchLinkedInProfiles(LinkedInProfileSearchDTO linkedInProfileSearchDTO);
 }

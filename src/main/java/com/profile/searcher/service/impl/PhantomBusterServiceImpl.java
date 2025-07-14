@@ -18,7 +18,7 @@ public class PhantomBusterServiceImpl implements PhantomBusterService {
     private final PhantomAgentTaskService phantomAgentTaskService;
 
     @Override
-    public SuccessResponseVO<UUID> searchLinkedInProfiles(LinkedInProfileSearchDTO linkedInProfileSearchDTO) {
+    public SuccessResponseVO<Object> searchLinkedInProfiles(LinkedInProfileSearchDTO linkedInProfileSearchDTO) {
         PhantomLaunchResponse phantomLaunchResponse = phantomBusterClient
                 .triggerPhantomBusterSearch(linkedInProfileSearchDTO.getCurrentDesignation(),
                         linkedInProfileSearchDTO.getUniversity());

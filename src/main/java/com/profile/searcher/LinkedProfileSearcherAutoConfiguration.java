@@ -2,6 +2,7 @@ package com.profile.searcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.profile.searcher.model.properties.PhantomBusterProperties;
+import com.profile.searcher.repository.AlumniRepository;
 import com.profile.searcher.repository.PhantomAgentTaskRepository;
 import com.profile.searcher.repository.UniversityRepository;
 import com.profile.searcher.service.LinkedInSearchService;
@@ -64,8 +65,10 @@ public class LinkedProfileSearcherAutoConfiguration {
     }
 
     @Bean
-    public LinkedInSearchService linkedInSearchService(PhantomBusterService phantomBusterService) {
-        return new LinkedInSearchServiceImpl(phantomBusterService);
+    public LinkedInSearchService linkedInSearchService(PhantomBusterService phantomBusterService,
+                                                       PhantomAgentTaskService phantomAgentTaskService,
+                                                       AlumniRepository alumniRepository) {
+        return new LinkedInSearchServiceImpl(phantomBusterService, phantomAgentTaskService, alumniRepository);
     }
 
     @Bean
