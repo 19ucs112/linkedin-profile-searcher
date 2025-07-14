@@ -76,9 +76,25 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-id">id</span></code> - The unique identifier for the alumni.</dd>
+<dd><code><span id="param-title">title</span></code> - The title associated with the alumni's name.</dd>
+<dd><code><span id="param-fullName">fullName</span></code> - The full name of alumni.</dd>
+<dd><code><span id="param-universityName">universityName</span></code> - The name of university alumni attended.</dd>
+<dd><code><span id="param-profileHeadLine">profileHeadLine</span></code> - A short headline or tagline from the alumni's profile.</dd>
+<dd><code><span id="param-location">location</span></code> - The location of the alumni.</dd>
+<dd><code><span id="param-connectionDegree">connectionDegree</span></code> - The degree of connection like 1st, 2nd, 3rd between user and alumni.</dd>
+<dd><code><span id="param-company">company</span></code> - The current or most recent company that alumni is associated.</dd>
+<dd><code><span id="param-profileUrl">profileUrl</span></code> - The URL to view the alumni's profile.</dd>
+<dd><code><span id="param-companyUrl">companyUrl</span></code> - The URL of the company associated with the alumni.</dd>
+<dd><code><span id="param-passedOutYear">passedOutYear</span></code> - The year of alumni graduated or completed studies.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">AlumniVO</span>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a>&nbsp;id, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fullName, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;universityName, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileHeadLine, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;location, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;connectionDegree, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;company, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;profileUrl, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;companyUrl, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;passedOutYear)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">AlumniVO is the response class representing an alumni profile with key details such as educational background,
+ professional information, and connection metadata.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -121,17 +137,17 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#company()" class="member-name-link">company</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>company</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-company"><code>company</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#companyUrl()" class="member-name-link">companyUrl</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>companyUrl</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-companyUrl"><code>companyUrl</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#connectionDegree()" class="member-name-link">connectionDegree</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>connectionDegree</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-connectionDegree"><code>connectionDegree</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -141,7 +157,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fullName()" class="member-name-link">fullName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>fullName</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-fullName"><code>fullName</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -151,32 +167,32 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>id</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-id"><code>id</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#location()" class="member-name-link">location</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>location</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-location"><code>location</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#passedOutYear()" class="member-name-link">passedOutYear</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>passedOutYear</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-passedOutYear"><code>passedOutYear</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#profileHeadLine()" class="member-name-link">profileHeadLine</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>profileHeadLine</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-profileHeadLine"><code>profileHeadLine</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#profileUrl()" class="member-name-link">profileUrl</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>profileUrl</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-profileUrl"><code>profileUrl</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title()" class="member-name-link">title</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>title</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-title"><code>title</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -186,7 +202,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#universityName()" class="member-name-link">universityName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>universityName</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-universityName"><code>universityName</code></a> record component.</div>
 </div>
 </div>
 </div>
@@ -222,17 +238,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>AlumniVO</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>id</code> - the value for the <code>id</code> record component</dd>
-<dd><code>title</code> - the value for the <code>title</code> record component</dd>
-<dd><code>fullName</code> - the value for the <code>fullName</code> record component</dd>
-<dd><code>universityName</code> - the value for the <code>universityName</code> record component</dd>
-<dd><code>profileHeadLine</code> - the value for the <code>profileHeadLine</code> record component</dd>
-<dd><code>location</code> - the value for the <code>location</code> record component</dd>
-<dd><code>connectionDegree</code> - the value for the <code>connectionDegree</code> record component</dd>
-<dd><code>company</code> - the value for the <code>company</code> record component</dd>
-<dd><code>profileUrl</code> - the value for the <code>profileUrl</code> record component</dd>
-<dd><code>companyUrl</code> - the value for the <code>companyUrl</code> record component</dd>
-<dd><code>passedOutYear</code> - the value for the <code>passedOutYear</code> record component</dd>
+<dd><code>id</code> - the value for the <a href="#param-id"><code>id</code></a> record component</dd>
+<dd><code>title</code> - the value for the <a href="#param-title"><code>title</code></a> record component</dd>
+<dd><code>fullName</code> - the value for the <a href="#param-fullName"><code>fullName</code></a> record component</dd>
+<dd><code>universityName</code> - the value for the <a href="#param-universityName"><code>universityName</code></a> record component</dd>
+<dd><code>profileHeadLine</code> - the value for the <a href="#param-profileHeadLine"><code>profileHeadLine</code></a> record component</dd>
+<dd><code>location</code> - the value for the <a href="#param-location"><code>location</code></a> record component</dd>
+<dd><code>connectionDegree</code> - the value for the <a href="#param-connectionDegree"><code>connectionDegree</code></a> record component</dd>
+<dd><code>company</code> - the value for the <a href="#param-company"><code>company</code></a> record component</dd>
+<dd><code>profileUrl</code> - the value for the <a href="#param-profileUrl"><code>profileUrl</code></a> record component</dd>
+<dd><code>companyUrl</code> - the value for the <a href="#param-companyUrl"><code>companyUrl</code></a> record component</dd>
+<dd><code>passedOutYear</code> - the value for the <a href="#param-passedOutYear"><code>passedOutYear</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -289,10 +305,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="id()">
 <h3>id</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></span>&nbsp;<span class="element-name">id</span>()</div>
-<div class="block">Returns the value of the <code>id</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-id"><code>id</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>id</code> record component</dd>
+<dd>the value of the <a href="#param-id"><code>id</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -300,10 +316,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="title()">
 <h3>title</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">title</span>()</div>
-<div class="block">Returns the value of the <code>title</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-title"><code>title</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>title</code> record component</dd>
+<dd>the value of the <a href="#param-title"><code>title</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -311,10 +327,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="fullName()">
 <h3>fullName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">fullName</span>()</div>
-<div class="block">Returns the value of the <code>fullName</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-fullName"><code>fullName</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>fullName</code> record component</dd>
+<dd>the value of the <a href="#param-fullName"><code>fullName</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -322,10 +338,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="universityName()">
 <h3>universityName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">universityName</span>()</div>
-<div class="block">Returns the value of the <code>universityName</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-universityName"><code>universityName</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>universityName</code> record component</dd>
+<dd>the value of the <a href="#param-universityName"><code>universityName</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -333,10 +349,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="profileHeadLine()">
 <h3>profileHeadLine</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">profileHeadLine</span>()</div>
-<div class="block">Returns the value of the <code>profileHeadLine</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-profileHeadLine"><code>profileHeadLine</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>profileHeadLine</code> record component</dd>
+<dd>the value of the <a href="#param-profileHeadLine"><code>profileHeadLine</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -344,10 +360,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="location()">
 <h3>location</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">location</span>()</div>
-<div class="block">Returns the value of the <code>location</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-location"><code>location</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>location</code> record component</dd>
+<dd>the value of the <a href="#param-location"><code>location</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -355,10 +371,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="connectionDegree()">
 <h3>connectionDegree</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">connectionDegree</span>()</div>
-<div class="block">Returns the value of the <code>connectionDegree</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-connectionDegree"><code>connectionDegree</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>connectionDegree</code> record component</dd>
+<dd>the value of the <a href="#param-connectionDegree"><code>connectionDegree</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -366,10 +382,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="company()">
 <h3>company</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">company</span>()</div>
-<div class="block">Returns the value of the <code>company</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-company"><code>company</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>company</code> record component</dd>
+<dd>the value of the <a href="#param-company"><code>company</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -377,10 +393,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="profileUrl()">
 <h3>profileUrl</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">profileUrl</span>()</div>
-<div class="block">Returns the value of the <code>profileUrl</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-profileUrl"><code>profileUrl</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>profileUrl</code> record component</dd>
+<dd>the value of the <a href="#param-profileUrl"><code>profileUrl</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -388,10 +404,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="companyUrl()">
 <h3>companyUrl</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">companyUrl</span>()</div>
-<div class="block">Returns the value of the <code>companyUrl</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-companyUrl"><code>companyUrl</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>companyUrl</code> record component</dd>
+<dd>the value of the <a href="#param-companyUrl"><code>companyUrl</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -399,10 +415,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="passedOutYear()">
 <h3>passedOutYear</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></span>&nbsp;<span class="element-name">passedOutYear</span>()</div>
-<div class="block">Returns the value of the <code>passedOutYear</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-passedOutYear"><code>passedOutYear</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>passedOutYear</code> record component</dd>
+<dd>the value of the <a href="#param-passedOutYear"><code>passedOutYear</code></a> record component</dd>
 </dl>
 </section>
 </li>

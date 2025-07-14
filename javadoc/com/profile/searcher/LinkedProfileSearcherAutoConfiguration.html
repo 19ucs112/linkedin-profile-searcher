@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations">@Configuration
 @ComponentScan
 @EnableScheduling
-@EnableConfigurationProperties(<a href="model/properties/PhantomBusterProperties.html" title="class in com.profile.searcher.model.properties">PhantomBusterProperties.class</a>)
+@EnableConfigurationProperties({<a href="model/properties/PhantomBusterProperties.html" title="class in com.profile.searcher.model.properties">PhantomBusterProperties.class</a>,<a href="model/properties/ApplicationProperties.html" title="class in com.profile.searcher.model.properties">ApplicationProperties.class</a>})
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">LinkedProfileSearcherAutoConfiguration</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 </section>
@@ -108,37 +108,40 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/LinkedInSearchService.html" title="interface in com.profile.searcher.service">LinkedInSearchService</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkedInSearchService(com.profile.searcher.service.PhantomBusterService,com.profile.searcher.service.PhantomAgentTaskService,com.profile.searcher.repository.AlumniRepository)" class="member-name-link">linkedInSearchService</a><wbr>(<a href="service/PhantomBusterService.html" title="interface in com.profile.searcher.service">PhantomBusterService</a>&nbsp;phantomBusterService,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applicationStart(org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent)" class="member-name-link">applicationStart</a><wbr>(org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/LinkedInSearchService.html" title="interface in com.profile.searcher.service">LinkedInSearchService</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkedInSearchService(com.profile.searcher.service.PhantomBusterService,com.profile.searcher.service.PhantomAgentTaskService,com.profile.searcher.repository.AlumniRepository)" class="member-name-link">linkedInSearchService</a><wbr>(<a href="service/PhantomBusterService.html" title="interface in com.profile.searcher.service">PhantomBusterService</a>&nbsp;phantomBusterService,
  <a href="service/PhantomAgentTaskService.html" title="interface in com.profile.searcher.service">PhantomAgentTaskService</a>&nbsp;phantomAgentTaskService,
  <a href="repository/AlumniRepository.html" title="interface in com.profile.searcher.repository">AlumniRepository</a>&nbsp;alumniRepository)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.swagger.v3.oas.models.OpenAPI</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openAPI()" class="member-name-link">openAPI</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/job/PhantomAgentTaskProcessingJob.html" title="class in com.profile.searcher.service.job">PhantomAgentTaskProcessingJob</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomAgentTaskProcessingJob(com.profile.searcher.repository.PhantomAgentTaskRepository,com.profile.searcher.service.client.PhantomBusterClient,com.fasterxml.jackson.databind.ObjectMapper,com.profile.searcher.service.mapper.GenericModelMapper,com.profile.searcher.repository.UniversityRepository)" class="member-name-link">phantomAgentTaskProcessingJob</a><wbr>(<a href="repository/PhantomAgentTaskRepository.html" title="interface in com.profile.searcher.repository">PhantomAgentTaskRepository</a>&nbsp;phantomAgentTaskRepository,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.swagger.v3.oas.models.OpenAPI</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#openAPI()" class="member-name-link">openAPI</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/job/PhantomAgentTaskProcessingJob.html" title="class in com.profile.searcher.service.job">PhantomAgentTaskProcessingJob</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomAgentTaskProcessingJob(com.profile.searcher.repository.PhantomAgentTaskRepository,com.profile.searcher.service.client.PhantomBusterClient,com.fasterxml.jackson.databind.ObjectMapper,com.profile.searcher.service.mapper.GenericModelMapper,com.profile.searcher.repository.UniversityRepository)" class="member-name-link">phantomAgentTaskProcessingJob</a><wbr>(<a href="repository/PhantomAgentTaskRepository.html" title="interface in com.profile.searcher.repository">PhantomAgentTaskRepository</a>&nbsp;phantomAgentTaskRepository,
  <a href="service/client/PhantomBusterClient.html" title="class in com.profile.searcher.service.client">PhantomBusterClient</a>&nbsp;phantomBusterClient,
  com.fasterxml.jackson.databind.ObjectMapper&nbsp;objectMapper,
  <a href="service/mapper/GenericModelMapper.html" title="interface in com.profile.searcher.service.mapper">GenericModelMapper</a>&nbsp;genericModelMapper,
  <a href="repository/UniversityRepository.html" title="interface in com.profile.searcher.repository">UniversityRepository</a>&nbsp;universityRepository)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/PhantomAgentTaskService.html" title="interface in com.profile.searcher.service">PhantomAgentTaskService</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomAgentTaskService(com.profile.searcher.service.mapper.GenericModelMapper,com.profile.searcher.repository.PhantomAgentTaskRepository)" class="member-name-link">phantomAgentTaskService</a><wbr>(<a href="service/mapper/GenericModelMapper.html" title="interface in com.profile.searcher.service.mapper">GenericModelMapper</a>&nbsp;modelMapper,
- <a href="repository/PhantomAgentTaskRepository.html" title="interface in com.profile.searcher.repository">PhantomAgentTaskRepository</a>&nbsp;phantomAgentTaskRepository)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/client/PhantomBusterClient.html" title="class in com.profile.searcher.service.client">PhantomBusterClient</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomBusterClient(org.springframework.web.client.RestTemplate,com.profile.searcher.model.properties.PhantomBusterProperties,com.fasterxml.jackson.databind.ObjectMapper)" class="member-name-link">phantomBusterClient</a><wbr>(org.springframework.web.client.RestTemplate&nbsp;restTemplate,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/PhantomAgentTaskService.html" title="interface in com.profile.searcher.service">PhantomAgentTaskService</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomAgentTaskService(com.profile.searcher.service.mapper.GenericModelMapper,com.profile.searcher.repository.PhantomAgentTaskRepository)" class="member-name-link">phantomAgentTaskService</a><wbr>(<a href="service/mapper/GenericModelMapper.html" title="interface in com.profile.searcher.service.mapper">GenericModelMapper</a>&nbsp;modelMapper,
+ <a href="repository/PhantomAgentTaskRepository.html" title="interface in com.profile.searcher.repository">PhantomAgentTaskRepository</a>&nbsp;phantomAgentTaskRepository)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/client/PhantomBusterClient.html" title="class in com.profile.searcher.service.client">PhantomBusterClient</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomBusterClient(org.springframework.web.client.RestTemplate,com.profile.searcher.model.properties.PhantomBusterProperties,com.fasterxml.jackson.databind.ObjectMapper)" class="member-name-link">phantomBusterClient</a><wbr>(org.springframework.web.client.RestTemplate&nbsp;restTemplate,
  <a href="model/properties/PhantomBusterProperties.html" title="class in com.profile.searcher.model.properties">PhantomBusterProperties</a>&nbsp;phantomBusterProperties,
  com.fasterxml.jackson.databind.ObjectMapper&nbsp;objectMapper)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/PhantomBusterService.html" title="interface in com.profile.searcher.service">PhantomBusterService</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomBusterService(com.profile.searcher.service.client.PhantomBusterClient,com.profile.searcher.service.PhantomAgentTaskService)" class="member-name-link">phantomBusterService</a><wbr>(<a href="service/client/PhantomBusterClient.html" title="class in com.profile.searcher.service.client">PhantomBusterClient</a>&nbsp;busterClient,
- <a href="service/PhantomAgentTaskService.html" title="interface in com.profile.searcher.service">PhantomAgentTaskService</a>&nbsp;phantomAgentTaskService)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.web.client.RestTemplate</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#restTemplate()" class="member-name-link">restTemplate</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="service/PhantomBusterService.html" title="interface in com.profile.searcher.service">PhantomBusterService</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#phantomBusterService(com.profile.searcher.service.client.PhantomBusterClient,com.profile.searcher.service.PhantomAgentTaskService)" class="member-name-link">phantomBusterService</a><wbr>(<a href="service/client/PhantomBusterClient.html" title="class in com.profile.searcher.service.client">PhantomBusterClient</a>&nbsp;busterClient,
+ <a href="service/PhantomAgentTaskService.html" title="interface in com.profile.searcher.service">PhantomAgentTaskService</a>&nbsp;phantomAgentTaskService)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.web.client.RestTemplate</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#restTemplate()" class="member-name-link">restTemplate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -227,6 +230,13 @@ loadScripts(document, 'script');</script>
 <h3>openAPI</h3>
 <div class="member-signature"><span class="annotations">@Bean
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">io.swagger.v3.oas.models.OpenAPI</span>&nbsp;<span class="element-name">openAPI</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applicationStart(org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent)">
+<h3>applicationStart</h3>
+<div class="member-signature"><span class="annotations">@EventListener(org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent.class)
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applicationStart</span><wbr><span class="parameters">(org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent&nbsp;event)</span></div>
 </section>
 </li>
 </ul>
