@@ -52,8 +52,10 @@ public class PhantomAgentTaskProcessingJob {
                     agentResponse = objectMapper.readValue(response.getResultObject(),
                             new TypeReference<>() {
                             });
-                } catch (JsonProcessingException e) {
+                } catch (Exception e) {
                     log.error(e.getMessage(), e);
+                    phantomAgentTaskEntity.setPhantomAgentTaskStatus(PhantomAgentTaskStatus.TASK_FAILED);
+                    phantomAgentTaskRepository.save(phantomAgentTaskEntity);
                     return;
                 }
                 UniversityEntity university = getUniversityEntity(phantomAgentTaskEntity.getUniversity());

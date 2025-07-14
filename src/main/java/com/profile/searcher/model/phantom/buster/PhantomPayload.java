@@ -16,8 +16,8 @@ public class PhantomPayload {
         private String search;
         private String keywords;
         private String sessionCookie;
-        private int numberOfResultsPerLaunch = 10;
-        private int numberOfResultsPerSearch = 10;
+        private int numberOfResultsPerLaunch = 100;
+        private int numberOfResultsPerSearch = 100;
         private String searchType = "keywords";
     }
 }

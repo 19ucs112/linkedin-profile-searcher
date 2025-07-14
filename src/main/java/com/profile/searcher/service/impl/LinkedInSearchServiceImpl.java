@@ -74,9 +74,9 @@ public class LinkedInSearchServiceImpl implements LinkedInSearchService {
                                                     Integer graduationYear) {
         List<AlumniVO> alumniVOList;
         if (graduationYear != null) {
-            alumniVOList = alumniRepository.findAllAlumni(currentDesignation, university, graduationYear);
+            alumniVOList = alumniRepository.findAllAlumni(currentDesignation.toLowerCase(), university, graduationYear);
         } else {
-            alumniVOList = alumniRepository.findAllAlumniWithoutGraduationYear(currentDesignation, university);
+            alumniVOList = alumniRepository.findAllAlumniWithoutGraduationYear(currentDesignation.toLowerCase(), university);
         }
         return SuccessResponseVO.of("Fetched alumni data successfully", alumniVOList);
     }

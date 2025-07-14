@@ -27,7 +27,8 @@ public interface GenericModelMapper {
     @Mapping(target = "phantomAgentTaskStatus", expression = "java(PhantomAgentTaskStatus.AGENT_LAUNCHED)")
     PhantomAgentTaskEntity map(String containerId, LinkedInProfileSearchDTO dto);
 
-    @Mapping(target = "title", expression = "java(agentResponse.getJobTitle().toLowerCase())")
+    @Mapping(target = "title", expression = "java(agentResponse.getJobTitle() != null "
+            + "? agentResponse.getJobTitle().toLowerCase(): agentResponse.getJobTitle())")
     @Mapping(target = "profileHeadLine", source = "agentResponse.additionalInfo")
     @Mapping(target = "university", source = "university")
     @Mapping(target = "passedOutYear", expression = "java(getPassedOutDate(agentResponse, university.getName()))")
