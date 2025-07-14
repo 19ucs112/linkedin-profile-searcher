@@ -18,6 +18,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+
+/***
+ * LinkedInSearchServiceImpl is the implementation of LinkedInSearchService interface.
+ * Handles alumni profile searching logic using a hybrid approach of local database search and PhantomBuster-based
+ * LinkedIn scraping if needed.
+ */
+
 @RequiredArgsConstructor
 public class LinkedInSearchServiceImpl implements LinkedInSearchService {
 
@@ -28,6 +35,13 @@ public class LinkedInSearchServiceImpl implements LinkedInSearchService {
     private final AlumniRepository alumniRepository;
 
 
+    /***
+     * Searches for alumni LinkedIn profiles based on the provided search criteria.
+     * First, attempts to retrieve data from the local database. If no data is found, triggers a PhantomBuster
+     * scraping process.
+     * @param linkedInProfileSearchDTO the search parameters : designation, university, and graduation year.
+     * @return successResponseVO containing a list of alumni or a tracking ID if scraping is triggered.
+     */
     @Override
     public SuccessResponseVO<Object> searchAlumniLinkedInProfiles(LinkedInProfileSearchDTO linkedInProfileSearchDTO) {
         SuccessResponseVO<Object> successResponseVO = getAlumniData(linkedInProfileSearchDTO.getCurrentDesignation(),
@@ -39,6 +53,12 @@ public class LinkedInSearchServiceImpl implements LinkedInSearchService {
         return phantomBusterService.searchLinkedInProfiles(linkedInProfileSearchDTO);
     }
 
+    /***
+     * Retrieves the results of a previously launched PhantomBuster scraping task using a tracking ID.
+     * @param trackingId the tracking identifier for the scraping task.
+     * @return SuccessResponseVO with the scraped alumni data.
+     * @throws LinkedInProfileSearcherException if the tracking ID is invalid or the task has failed.
+     */
     @Override
     public SuccessResponseVO<Object> fetchScrapedAlumniLinkedInProfiles(UUID trackingId) {
         Optional<PhantomAgentTaskEntity> phantomAgentTask = phantomAgentTaskService
@@ -57,6 +77,12 @@ public class LinkedInSearchServiceImpl implements LinkedInSearchService {
                 phantomAgentTaskEntity.getPassedOutYear());
     }
 
+    /***
+     * Fetches all alumni profiles from the database with pagination support.
+     * @param page the page number.
+     * @param limit the number of records per page.
+     * @return SuccessResponseVO containing paginated list of alumni records.
+     */
     @Override
     public SuccessResponseVO<List<AlumniVO>> fetchAllAlumni(int page, int limit) {
         if (page < 0) {

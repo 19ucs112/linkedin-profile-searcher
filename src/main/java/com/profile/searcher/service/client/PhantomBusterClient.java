@@ -18,12 +18,29 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URLEncoder;
 
+/***
+ * Client class is responsible for interacting with PhantomBuster's API.
+ * This client allows triggering LinkedIn searches via PhantomBuster and retrieving the scraped results based on
+ * container IDs.
+ */
+
 @RequiredArgsConstructor
 @Slf4j
 public class PhantomBusterClient {
 
+    /***
+     * URL to trigger the PhantomBuster agent.
+     */
     private static final String PHANTOM_URL = "https://api.phantombuster.com/api/v2/agents/launch";
+
+    /***
+     * Base URL for LinkedIn people search.
+     */
     private static final String LINKEDIN_SEARCH_URL = "https://www.linkedin.com/search/results/people/";
+
+    /***
+     * URL to fetch the container output after PhantomBuster execution.
+     */
     private static final String PHANTOM_CONTAINER_OUTPUT_URL = "https://api.phantombuster.com/api/v2/containers/fetch";
 
     private final RestTemplate restTemplate;
@@ -32,7 +49,12 @@ public class PhantomBusterClient {
 
     private final ObjectMapper objectMapper;
 
-
+    /***
+     * Triggers a LinkedIn profile search using PhantomBuster with the given designation and university.
+     * @param currentDesignation the current job title or designation to search.
+     * @param university the university name to include in the search.
+     * @return PhantomPayload containing execution metadata and container ID
+     */
     public PhantomLaunchResponse triggerPhantomBusterSearch(String currentDesignation, String university) {
         PhantomPayload payload = createPhantomBusterPayload(currentDesignation, university);
         HttpHeaders headers = creatHttpHeaders();
@@ -45,6 +67,11 @@ public class PhantomBusterClient {
         }
     }
 
+    /***
+     * Fetches the output (scraped data) from PhantomBuster using the container ID.
+     * @param containerId The unique identifier for teh PhantomBuster container.
+     * @return LinkedInProfileScrapResponse containing the scraped LinkedIn profiles data.
+     */
     public LinkedInProfileScrapResponse getContainerOutput(String containerId) {
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(PHANTOM_CONTAINER_OUTPUT_URL)
                 .queryParam("id", containerId)
