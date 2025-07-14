@@ -9,6 +9,8 @@ spring:
   flyway:
     locations: classpath:test/db/migration
     enabled: true
+    user: sa
+    password:
 
 com:
   phantom:
