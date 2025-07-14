@@ -2,10 +2,10 @@ spring:
   datasource:
     url: jdbc:postgresql://${POSTGRES_DATABASE_HOST:localhost}:${POSTGRES_DATABASE_PORT:5432}/${POSTGRES_DATABASE_NAME:linkedin_profile_searcher}
     username: ${POSTGRES_DATABASE_USERNAME:postgres}
-    password: ${POSTGRES_DATABASE_PASSWORD:password}
+    password: ${POSTGRES_DATABASE_PASSWORD:}
   flyway:
-    user: postgres
-    password: password
+    user: ${POSTGRES_DATABASE_NAME:postgres}
+    password: ${POSTGRES_DATABASE_PASSWORD}
     baseline-version: 1.0
     baseline-on-migrate: true
     baseline-description: baseline-description
@@ -14,9 +14,15 @@ spring:
   profiles:
     active: local
 
+
 com:
   phantom:
     buster:
-      phantom-id: 814818359720730
-      phantom-buster-api-key: GXDWqkWxhbHATLTWjNbnyaNwhmEfEjaidJmCQHD8zDk
-      linked-in-session-cookie: AQEDATB5kfwE0dg0AAABmAOn488AAAGYJ7Rnz1YAqQAFtlc5_BcpfNLzTNQbLm15lqyAZZ0uTSMlNXBFT4KwFuMBYvzID8BMlnt3M-e7YVowf9KZax0sv019N_W0Du6MdxNojVCvkad-2xnwMiGs9fQj
+      phantom-id: ${PHANTOM_ID:814818359720730}
+      phantom-buster-api-key: ${PHANTOM_BUSTER_API_KEY:GXDWqkWxhbHATLTWjNbnyaNwhmEfEjaidJmCQHD8zDk}
+      linked-in-session-cookie: ${LINKED_IN_SESSION_COOKIE}
+  linkedin:
+    searcher:
+      base-url: http://localhost:${server.port}
+server:
+  port: 8080
